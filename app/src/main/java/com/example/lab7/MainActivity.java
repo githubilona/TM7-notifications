@@ -1,7 +1,9 @@
 package com.example.lab7;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -12,6 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int MY_NOTIFICATION_ID = 1;
     private static Context context;
 
 
@@ -19,6 +22,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showNotificationOnClick(View view) {
+        String contextTitle="Notification from Lab7 App";
+        String contentText="I am notification";
+        NotificationCompat.Builder mBuilder =
+                (NotificationCompat.Builder) new NotificationCompat.Builder(this)
+                        .setSmallIcon(android.R.drawable.stat_sys_warning)
+                        .setContentTitle(contextTitle)
+                        .setContentText(contentText);
+
+        NotificationManager mNotificationManager = (NotificationManager)
+                getSystemService(Context.NOTIFICATION_SERVICE);
+
+        mNotificationManager.notify(MY_NOTIFICATION_ID, mBuilder.build());
+
     }
 
     public void showDialogOnClick(View view) {

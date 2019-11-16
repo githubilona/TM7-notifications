@@ -2,6 +2,7 @@ package com.example.lab7;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -11,6 +12,19 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static Context context;
+
+
+    public void showCustomNotificationOnClick(View view) {
+    }
+
+    public void showNotificationOnClick(View view) {
+    }
+
+    public void showDialogOnClick(View view) {
+        ExampleDialog exampleDialog = new ExampleDialog();
+        exampleDialog.show(getSupportFragmentManager(), "dialog");
+    }
 
     public void showToastOnClick(View view) {
         Toast toast = new Toast(getApplicationContext());
@@ -30,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        MainActivity.context = getApplicationContext();
     }
-
+    public static Context getAppContext() {
+        return MainActivity.context;
+    }
 }

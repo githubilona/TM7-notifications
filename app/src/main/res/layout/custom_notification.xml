@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6EEDD"
+    android:columnCount="3"
+    android:orientation="vertical"
+    android:rowCount="3">
+
+    <TextView
+        android:id="@+id/customNotificationText"
+        android:layout_width="152dp"
+        android:layout_height="68dp"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="200dp"
+        android:layout_toEndOf="@+id/notificationImageView"
+        android:text="Hello World "
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/notificationImageView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_row="1"
+        android:layout_column="0"
+        tools:srcCompat="@color/colorAccent" />
+
+</RelativeLayout>
